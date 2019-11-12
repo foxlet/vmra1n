@@ -10,6 +10,21 @@ You do not need any additional hardware, unless you don't have USB 2.0 ports or 
 ## Enable BIOS Features
 Boot into your firmware settings, and turn on AMD-V/VT-x, as well as iommu/AMD-Vi/VT-d/SR-IOV.
 
+## Enable Kernel Features
+The `iommu` kernel module is not enabled by default, but you can enable it on boot by passing the following flags to the kernel.
+
+### AMD
+```
+iommu=pt amd_iommu=on
+```
+
+### Intel
+```
+iommu=pt intel_iommu=on
+```
+
+To do this permanently, you can add it to your bootloader. If you're using GRUB, for example, edit `/etc/default/grub` and add the previous lines to the `GRUB_CMDLINE_LINUX_DEFAULT` section, then run `sudo update-grub` (or `sudo grub-mkconfig` on some systems) and reboot.
+
 ## Get Some Information
 Run `./lsiommu.sh` (included in this repo), if successful, you'll get list of PCIe devices and their groups. If there is no output, double check BIOS settings. As an example:
 ```
