@@ -17,7 +17,7 @@ IOMMU Group 14 03:00.0 USB controller [0c03]: Advanced Micro Devices, Inc. [AMD]
 IOMMU Group 14 03:00.1 SATA controller [0106]: Advanced Micro Devices, Inc. [AMD] 300 Series Chipset SATA Controller [1022:43b7] (rev 02)
 IOMMU Group 18 27:00.3 USB controller [0c03]: Advanced Micro Devices, Inc. [AMD] Zeppelin USB 3.0 Host controller [1022:145f]
 ```
-Look for an USB controller on its own group, note the BDF ID (`27:00.3` in this example) and the PCI ID (`1022:145f` in this example)
+Look for an USB controller on its own group, note the BDF ID (`27:00.3` in this example) and the PCI ID (`1022:145f` in this example).
 
 ## Isolate the Controller
 Edit `rebind.sh` and change the values for PID and BDF with your own, then save it and run it as `sudo ./rebind.sh`. This will turn off a group of USB ports, so relocate any input devices to other ports as needed. As an example of the format:
@@ -38,4 +38,4 @@ Add the following to the end of `basic.sh`, replace `host=XX:XX.X` with the BDF 
 ```
 
 ## Run Checkra1n
-Start `./basic.sh`. If everything went correctly, you should be able to connect an iPhone to the assigned ports and run the exploit.
+Run `sudo ./basic.sh`. If everything went correctly, you should be able to connect an iPhone to the assigned ports and run the exploit.
