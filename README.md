@@ -63,3 +63,8 @@ Run `sudo ./basic.sh`. You should be able to connect an iPhone to the assigned p
 Please ensure all devices within the iommu_group are bound to their vfio bus driver.
 ```
 The USB controller you selected is in a group with more than one device, either run `rebind.sh` on the other devices with the same group number, or use an ACS patch (for advanced users). You do not need to attach the devices to the VM, only rebind them.
+
+```
+iommu doesn't work properly when enabled in BIOS
+```
+Update your BIOS if possible, older boards may have issues with early implementations.
