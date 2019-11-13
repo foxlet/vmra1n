@@ -44,6 +44,8 @@ BIND_BDF1="0000:27:00.3"
 ## Install macOS
 Follow https://github.com/foxlet/macOS-Simple-KVM up to step 2. Once installation is finished, shut down the VM.
 
+> Note! The VM's display may go to sleep during installation, which will appear frozen. Simply click on the window and press a key to wake it up.
+
 ## Attach USB Controller
 Add the following to the end of `basic.sh`, replace `host=XX:XX.X` with the BDF ID from earlier.
 
